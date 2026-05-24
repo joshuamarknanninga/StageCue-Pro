@@ -1,0 +1,1 @@
+export default function PlanCard({title,price,features,onSubscribe,loading}){return <article className="card plan"><h3>{title}</h3><p className="price">{price}</p><ul>{features.map(f=><li key={f}>{f}</li>)}</ul><button onClick={onSubscribe} disabled={loading}>{loading?'Starting...':'Subscribe'}</button></article>}

@@ -1,0 +1,2 @@
+import { useState } from 'react';import RehearsalReportForm from '../components/RehearsalReportForm';
+export default function RehearsalReports({reports,setReports,makeId}){const [form,setForm]=useState({}); const add=()=>{setReports([{id:makeId(),...form},...reports]);setForm({});}; return <section><h2>Rehearsal Reports</h2><RehearsalReportForm form={form} setForm={setForm} onAdd={add}/><div className='card'>{reports.map(r=><article key={r.id} className='list'><strong>{r.showTitle}</strong> - {r.rehearsalDate}<p>{r.techNotes}</p></article>)}</div></section>}
