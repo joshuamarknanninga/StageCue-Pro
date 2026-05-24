@@ -1,0 +1,2 @@
+import { createPortalSession } from '../services/api';
+export default function Settings({plan}){const manage=async()=>{try{const d=await createPortalSession();window.location.href=d.url;}catch(e){alert(e.message);}};return <section><h2>Settings</h2><div className='grid-2'><article className='card'><h3>Current Plan</h3><p>{plan}</p></article><article className='card'><h3>Subscription Status</h3><p>Active locally (MVP mode)</p><button onClick={manage}>Manage Subscription</button></article></div></section>}
